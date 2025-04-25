@@ -1,18 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; 
 
 const StoreLayout = ({ children }) => {
   return (
     <div className="bg-white min-h-screen">
-      {/* Hidden Checkbox to Toggle Cart Drawer */}
       <input type="checkbox" id="cartToggle" className="hidden peer" />
 
-      {/* Top Navbar */}
       <header className="w-full bg-white shadow-md p-4 fixed top-0 left-0 z-20">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="hidden md:flex w-full justify-between items-center">
             <div className="text-lg font-bold">Monastrell</div>
             <nav className="flex space-x-4">
-              <a href="#" className="text-gray-700 hover:text-gray-900">Inicio</a>
+              <Link to="/" className="text-gray-700 hover:text-gray-900">Inicio</Link>
               <a href="#" className="text-gray-700 hover:text-gray-900">Tienda</a>
               <a href="#" className="text-gray-700 hover:text-gray-900">Información</a>
             </nav>
@@ -26,7 +25,6 @@ const StoreLayout = ({ children }) => {
             </div>
           </div>
 
-          {/* Mobile View */}
           <div className="md:hidden flex items-center justify-between w-full">
             <button className="text-gray-700 hover:text-gray-900">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -38,12 +36,10 @@ const StoreLayout = ({ children }) => {
         </div>
       </header>
 
-      {/* Main Content */}
       <main className="mt-16 md:mt-20 p-4 max-w-7xl mx-auto">
         {children}
       </main>
 
-      {/* Bottom Mobile Navbar */}
       <footer className="md:hidden fixed bottom-0 left-0 w-full bg-white border-t shadow-md">
         <div className="flex justify-around items-center p-2">
           <a href="#" className="text-gray-700 hover:text-gray-900 flex flex-col items-center">
@@ -73,10 +69,8 @@ const StoreLayout = ({ children }) => {
         </div>
       </footer>
 
-      {/* Overlay */}
       <div id="cartOverlay" className="fixed inset-0 z-30 bg-black bg-opacity-50 opacity-0 pointer-events-none peer-checked:opacity-100 peer-checked:pointer-events-auto transition-opacity duration-300 ease-in-out" />
 
-      {/* Cart Drawer */}
       <div id="cartDrawer" className="fixed top-0 right-0 h-full w-80 md:w-96 bg-white shadow-lg transform translate-x-full peer-checked:translate-x-0 transition-transform duration-300 ease-in-out z-40 p-4 md:max-w-xs">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-bold">Carrito de Compras</h2>
@@ -93,4 +87,5 @@ const StoreLayout = ({ children }) => {
 };
 
 export default StoreLayout;
+
 
